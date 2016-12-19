@@ -2,7 +2,7 @@ var express = require('express');
 // instantiate the app
 var app = express();
 
-app.listen(8080, function() {
+app.listen(process.env.PORT || 8080, function() {
   console.log('cool stuff on: 8080');
 });
 
