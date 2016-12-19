@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Doctor's Appointment Dashboard</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/libs/angular.min.js"></script>
+    <script src="/js/libs/angular-route.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/controllers/users.js"></script>
+
+    <script src="/js/controllers/todos.js"></script>   
+    <script src="/js/factories/todos.js"></script>
+
+  </head>
+  <body>
+    <div class="container" ng-app='myApp'>
+      <div>
+        <a class="btn btn-default" href="#/">Dashboard</a>
+        <a class="btn btn-default" href="#/new_appointment">Appointments</a>
+        <a class="btn btn-default" href="#/users">Patients</a>
+
+      </div>
+      <div ng-view="">
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<div ng-controller="todosController">
+  <h2>Doctor's Appointment Dashboard</h2>
+  <div class="pull-right form-group"><span>Search by Patient's Name:</span>
+    <input class='form-control' type='text' ng-model='filter_name' placeholder='filter by name...'>
+  </div>
+  <table class='table'>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Patient Name</th>
+      <th>Reason/Complain</th>
+      <th>Action</th>
+    </tr>
+    <tr ng-repeat="todo in todos | filter: filter_name  | orderBy: 'app_date' ">
+      <td ng-bind='todo.app_date | date: "MM/dd/yyyy" '></td>
+      <td ng-bind='todo.app_time'></td>
+      <td ng-bind='todo.name'></td>
+      <td ng-bind='todo.reason'></td>
+      <td>
+        <button ng-click='removeTodo(todo._id)'>delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td colspan='5'>
+        <p></p> <a class="pull-right btn btn-primary" href="#/new_appointment">Add New Appointment</a> </td>
+    </tr>
+  </table>
+</div>
